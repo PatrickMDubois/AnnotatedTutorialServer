@@ -17,4 +17,5 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url(r'^tutorials/', include('tutorials.urls')),
+    url(r'^logger/', include('logger.urls')),
 ]
