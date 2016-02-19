@@ -19,7 +19,7 @@ class Step(models.Model):
 class Note(models.Model):
     step_id = models.ForeignKey(Step, related_name='notes')
     category = models.CharField(max_length=50)
-    software = models.CharField(max_length=50)
+    software = models.CharField(max_length=50, blank=True)
     content = models.TextField(default=None, null=True)
 
     def __str__(self):
