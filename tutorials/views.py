@@ -13,3 +13,9 @@ def tutorial(request, tutorial_id):
         return Response(serializer.data)
     except Tutorial.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def tutorials(request):
+    t = Tutorial.objects.filter()
+    serializer = TutorialSerializer(t, many=True)
+    return Response(serializer.data)
