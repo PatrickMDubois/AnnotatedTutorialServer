@@ -21,6 +21,7 @@ class Note(models.Model):
     category = models.CharField(max_length=50)
     software = models.CharField(max_length=50, blank=True)
     content = models.TextField(default=None, null=True)
+    author = models.CharField(max_length=50)
 
     def __str__(self):
         return self.content
