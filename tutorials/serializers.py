@@ -17,6 +17,7 @@ class StepSerializer(serializers.ModelSerializer):
 
 class TutorialSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
+    notes = NoteSerializer(many=True)
 
     class Meta:
         model = Tutorial
