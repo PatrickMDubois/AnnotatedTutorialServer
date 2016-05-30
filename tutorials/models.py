@@ -27,7 +27,7 @@ class Note(models.Model):
     content = models.TextField(default=None, null=True)
     author = models.CharField(max_length=50)
     user_submitted = models.BooleanField(default=True)
-    reply_to = models.ForeignKey('self', null=True, blank=True)
+    reply_to = models.ForeignKey('self', related_name="replies", null=True, blank=True)
 
     def __str__(self):
         return self.content

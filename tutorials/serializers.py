@@ -6,6 +6,9 @@ class NoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Note
+        fields = ('step_id', 'tutorial_id', 'category', 'extra_info', 'content', 'author', 'user_submitted', 'reply_to', 'replies')
+
+NoteSerializer._declared_fields['replies'] = NoteSerializer(many=True)
 
 
 class StepSerializer(serializers.ModelSerializer):
