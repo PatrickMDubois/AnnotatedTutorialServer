@@ -6,13 +6,17 @@ class NoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Note
-        fields = ('step_id', 'tutorial_id', 'category', 'extra_info', 'content', 'author', 'user_submitted', 'reply_to', 'replies')
 
-NoteSerializer._declared_fields['replies'] = NoteSerializer(many=True)
+
+class NestedNoteSerializer(serializers.ModelSerializer):
+    replies = NoteSerializer(many=True)
+
+    class Meta:
+        model = Note
 
 
 class StepSerializer(serializers.ModelSerializer):
-    notes = NoteSerializer(many=True)
+    notes = NestedNoteSerializer(many=True)
 
     class Meta:
         model = Step
@@ -20,7 +24,7 @@ class StepSerializer(serializers.ModelSerializer):
 
 class TutorialSerializer(serializers.ModelSerializer):
     steps = StepSerializer(many=True)
-    notes = NoteSerializer(many=True)
+    notes = NestedNoteSerializer(many=True)
 
     class Meta:
         model = Tutorial
