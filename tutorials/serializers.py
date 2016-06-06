@@ -9,11 +9,11 @@ class NoteSerializer(serializers.ModelSerializer):
 
 
 class NestedNoteSerializer(serializers.ModelSerializer):
-    replies = NoteSerializer(many=True)
 
     class Meta:
         model = Note
 
+NestedNoteSerializer._declared_fields['replies'] = NestedNoteSerializer(many=True)
 
 class StepSerializer(serializers.ModelSerializer):
     notes = NestedNoteSerializer(many=True)
