@@ -1,9 +1,8 @@
-from .models import Tutorial
+from .models import Tutorial, Author
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import TutorialSerializer
-from .serializers import NoteSerializer
+from .serializers import TutorialSerializer, NoteSerializer, AuthorSerializer
 
 
 @api_view(['GET'])
@@ -32,3 +31,14 @@ def notes(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def author(request, author_name):
+
+    try:
+        a = Author.objects.get(name__exact=author_name)
+        serializer = AuthorSerializer(a)
+        return Response(serializer.data)
+    except Author.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)

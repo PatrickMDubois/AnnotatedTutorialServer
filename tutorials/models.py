@@ -31,3 +31,12 @@ class Note(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=50)
+    current_tutorial = models.ForeignKey(Tutorial)
+    active = models.BooleanField(default = False)
+
+    def __str__(self):
+        return self.name
