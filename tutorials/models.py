@@ -35,7 +35,7 @@ class Note(models.Model):
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
-    current_tutorial = models.ForeignKey(Tutorial)
+    current_tutorial = models.ForeignKey(Tutorial, related_name='has_access')
     active = models.BooleanField(default = False)
 
     def __str__(self):
