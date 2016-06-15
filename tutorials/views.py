@@ -37,7 +37,7 @@ def notes(request):
 def author(request, author_name):
 
     try:
-        a = Author.objects.get(name__exact=author_name)
+        a = Author.objects.get(name__iexact=author_name)
         serializer = AuthorSerializer(a)
         return Response(serializer.data)
     except Author.DoesNotExist:
