@@ -15,6 +15,7 @@ class NestedNoteSerializer(serializers.ModelSerializer):
 
 NestedNoteSerializer._declared_fields['replies'] = NestedNoteSerializer(many=True)
 
+
 class StepSerializer(serializers.ModelSerializer):
     notes = NestedNoteSerializer(many=True)
 
@@ -31,6 +32,7 @@ class TutorialSerializer(serializers.ModelSerializer):
 
 
 class AuthorSerializer(serializers.ModelSerializer):
+    current_tutorial = TutorialSerializer()
 
     class Meta:
         model = Author
