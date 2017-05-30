@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Tutorial, Step, Note, Author
+from .models import Tutorial, Step, Note, Contributor
 
 
 class NoteSerializer(serializers.ModelSerializer):
@@ -31,8 +31,8 @@ class TutorialSerializer(serializers.ModelSerializer):
         model = Tutorial
 
 
-class AuthorSerializer(serializers.ModelSerializer):
+class ContributorSerializer(serializers.ModelSerializer):
     current_tutorial = TutorialSerializer()
 
     class Meta:
-        model = Author
+        model = Contributor
