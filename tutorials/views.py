@@ -28,7 +28,7 @@ def notes(request):
     serializer = NoteSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -48,7 +48,7 @@ def change_note(request, note_id):
 
 
 @api_view(['GET'])
-def author(request, contributor_name):
+def contributor(request, contributor_name):
 
     try:
         a = Contributor.objects.get(name__iexact=contributor_name)
