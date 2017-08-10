@@ -15,7 +15,7 @@ class Step(models.Model):
     step_number = models.CharField(max_length = 50,blank=True)
 
     def __str__(self):
-        return self.html
+        return str(self.tutorial_id) + " " + str(self.step_number)
 
 
 class Interface(models.Model):
@@ -28,8 +28,8 @@ class Interface(models.Model):
 
 class Contributor(models.Model):
     name = models.CharField(max_length=50)
-    current_tutorial = models.ForeignKey(Tutorial, related_name='has_access')
-    active = models.BooleanField(default = False)
+    current_tutorial = models.ForeignKey(Tutorial, related_name='has_access', null=True, blank=True)
+    active = models.BooleanField(default = True)
     tutorial_one = models.ForeignKey(Tutorial, related_name='tutorialOne', null=True, blank=True)
     tutorial_two = models.ForeignKey(Tutorial, related_name='tutorialTwo', null=True, blank=True)
     tutorial_three = models.ForeignKey(Tutorial, related_name='tutorialThree', null=True, blank=True)
@@ -54,5 +54,6 @@ class Note(models.Model):
     deleted = models.BooleanField(default=False)
     dateSubmitted = models.CharField(max_length=50, blank=True, default='***')
     contributor_list = models.ManyToManyField(Contributor, default=None, related_name='contributors', blank=True)
+
     def __str__(self):
-        return self.content
+        return str(self.content)
