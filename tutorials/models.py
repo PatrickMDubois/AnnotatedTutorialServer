@@ -43,12 +43,12 @@ class Contributor(models.Model):
 
 
 class Note(models.Model):
-    step_id = models.ManyToManyField(Step, related_name='notes', blank=True)
-    tutorial_id = models.ForeignKey(Tutorial, related_name='notes')
-    category = models.CharField(max_length=50)
-    extra_info = models.CharField(max_length=50, blank=True)
+    step_id = models.ManyToManyField(Step, related_name='notes', blank=True,null=True)
+    tutorial_id = models.ForeignKey(Tutorial, related_name='notes',blank=True,null=True)
+    category = models.CharField(max_length=50,null=True)
+    extra_info = models.CharField(max_length=50, blank=True,null=True)
     content = models.TextField(default=None, null=True)
-    contributor = models.CharField(max_length=50)
+    contributor = models.CharField(max_length=50,null=True)
     user_submitted = models.BooleanField(default=True)
     reply_to = models.ForeignKey('self', related_name="replies", null=True, blank=True)
     deleted = models.BooleanField(default=False)

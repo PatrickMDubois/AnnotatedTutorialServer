@@ -8,6 +8,7 @@ class NoteSerializer(serializers.ModelSerializer):
         model = Note
 
 
+
 class NestedNoteSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -29,6 +30,7 @@ class TutorialSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tutorial
+
 
 class InterfaceSerializer(serializers.ModelSerializer):
 
