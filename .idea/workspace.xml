@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72866cf6-5019-4455-9f2e-218f44b844f2" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/db-study.sqlite3-journal" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-study.sqlite3" afterPath="$PROJECT_DIR$/db-study.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-tutorial-study.sqlite3" afterPath="$PROJECT_DIR$/db-tutorial-study.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db-study-two.sqlite3" afterPath="$PROJECT_DIR$/db-study-two.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AnnotatedTutorialServer/settings.py" afterPath="$PROJECT_DIR$/AnnotatedTutorialServer/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorials/models.py" afterPath="$PROJECT_DIR$/tutorials/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tutorials/serializers.py" afterPath="$PROJECT_DIR$/tutorials/serializers.py" />
     </list>
     <ignored path="AnnotatedTutorialServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -440,7 +436,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="21" width="1863" height="1059" extended-state="7" />
+    <frame x="57" y="21" width="1863" height="1059" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0031088083" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
